@@ -1,0 +1,84 @@
+# Monitor de Editais de Inovação — SENAI MS
+
+Painel web estático que monitora editais, chamadas públicas e programas de fomento à inovação abertos ou próximos de abrir — nacional, estadual (MS) e internacionais com elegibilidade do Brasil.
+
+## Funcionalidades
+
+- **Tabela de Aderência** — classifica editais por grau de aderência aos 3 institutos SENAI/MS (IST Alimentos, IST Eficiência Operacional, ISI Biomassa)
+- **Tabela de Editais** — 38+ editais com filtros dependentes (instituto, status, tipo de público, fonte, dias restantes)
+- **Filtros dependentes** — ao selecionar um filtro, os demais se adequam automaticamente
+- **Cards mobile** — em telas pequenas, tabelas são substituídas por cards legíveis
+- **Dados embutidos** — funciona com `file://` (duplo-clique) sem servidor
+
+## Estrutura
+
+```
+├── index.html                 Shell vazio — renderizado via JS
+├── css/
+│   ├── tokens.css             Design tokens SENAI (cores, fontes, sombras)
+│   └── style.css              Layout, tabelas, filtros, responsivo
+├── js/
+│   ├── render.js              Gera DOM a partir do JSON
+│   ├── filters.js             Lógica de filtros com dependência
+│   └── app.js                 Entry point: scroll spy, nav, drawer
+├── data/
+│   ├── editais.json           Fonte única de verdade (JSON)
+│   └── editais.js             Wrapper JS: window.EDITAIS_DATA
+├── scripts/
+│   ├── md_to_json.py          Parser: Markdown → JSON + JS
+│   └── render_static.py       Gerador HTML estático (opcional)
+├── assets/
+│   ├── logo-senai-fiems.png   Logo SENAI MS
+│   └── palette.json           Paleta de cores
+├── PROMPT.md                  Metodologia de 8 passos para cada execução semanal
+├── AGENTS.md                  Instruções para agentes OpenCode
+└── .gitignore
+```
+
+## Fluxo semanal
+
+```
+Monitoramento_Editais_Inovacao_YYYY-MM-DD.md  (edição manual)
+        │
+        ▼  python scripts/md_to_json.py
+data/editais.json + data/editais.js           (atualizados)
+        │
+        ▼  carregamento via <script>
+index.html → render.js → DOM                  (tabelas, filtros, cards)
+```
+
+### Atualizar dados
+
+1. Editar o `.md` com novos editais
+2. Executar:
+   ```powershell
+   python scripts/md_to_json.py data/Monitoramento_Editais_Inovacao_2026-08-24.md data/editais.json
+   ```
+3. Abrir `index.html` no navegador
+
+### Gerar HTML estático (opcional)
+
+```powershell
+python scripts/render_static.py data/editais.json index.html
+```
+
+## Executar
+
+Sem instalação. Funciona com `file://` ou HTTP:
+
+```powershell
+# Opção 1: duplo-clique no index.html
+# Opção 2: servidor local
+python -m http.server 8000
+# abrir http://localhost:8000
+```
+
+## Tecnologias
+
+- **HTML/CSS/JS** vanilla (sem frameworks, sem build)
+- **Python 3** para scripts de conversão
+- Design tokens do SENAI MS (paleta azul `#003876` + laranja `#E84910`)
+
+## Licença
+
+Uso interno — SENAI/MS Sistema FIEMS.
