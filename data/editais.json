@@ -1,22 +1,22 @@
 {
   "meta": {
-    "reference_date": "2026-08-25 (terça-feira) — base para toda classificação de status/prazos.",
-    "reference_date_formatted": "2026-08-25 (terça-feira) — base para toda classificação de status/prazos.",
+    "reference_date": "2026-08-27 (quarta-feira) — base para toda classificação de status/prazos.",
+    "reference_date_formatted": "2026-08-27 (quarta-feira) — base para toda classificação de status/prazos.",
     "scope": "Nacional (BR), estadual (prioridade MS/Centro-Oeste) e internacionais com elegibilidade do Brasil.",
-    "methodology": "Pesquisa em fontes oficiais (FINEP, CNPq, FAPs, BNDES, Embrapii, SEBRAE, órgãos estaduais, Horizon Europe/Eureka/CONFAP, etc.), com conferência da data do sistema em 25/08/2026. Não foram inventados dados; campos não localizados constam como \"Não encontrado\". Editais encerrados antes de 25/08/2026 foram excluídos da tabela principal (ver rodapé)."
+    "methodology": "Pesquisa em fontes oficiais (FINEP, CNPq, FAPs, BNDES, Embrapii, SEBRAE, órgãos estaduais, Horizon Europe/Eureka/CONFAP, etc.), com conferência da data do sistema em 27/08/2026. Não foram inventados dados; campos não localizados constam como \"Não encontrado\". Editais encerrados antes de 27/08/2026 foram excluídos da tabela principal (ver rodapé)."
   },
   "stats": {
-    "abertos": 28,
+    "abertos": 29,
     "continuos": 5,
     "em_breve": 3,
-    "encerram_7d": 10,
-    "nao_confirmado": 9
+    "encerram_7d": 8,
+    "nao_confirmado": 8
   },
   "resumo_executivo": [
-    "Abertos agora: 28 editais (nacionais, estaduais e internacionais) com inscrições vigentes em 25/08/2026, mais 5 linhas de fluxo contínuo (sem prazo).",
+    "Abertos agora: 29 editais (nacionais, estaduais e internacionais) com inscrições vigentes em 27/08/2026, mais 5 linhas de fluxo contínuo (sem prazo).",
     "Em breve: 3 chamadas internacionais (Water4All, Biodiversa+, Sustainable Blue Economy) com abertura entre 08 e 14/09/2026.",
-    "Alerta (encerramento em ≤ 7 dias): 10 editais fecham até 01/09/2026. O prazo mais próximo é o SENAI+GIZ Fit for Carbon Pricing, em 28/08; em 31/08 vencem seis linhas FINEP, a chamada FAPESP-FACEPE e o CNPq ProÁfrica; em 01/09 vence a pré-proposta do Programa Desafios da Amazônia.",
-    "Não confirmado: 9 itens (datas não extraídas de fontes oficiais após busca aprofundada) — listados ao final, com motivo.",
+    "Alerta (encerramento em ≤ 7 dias): 8 editais fecham até 03/09/2026. O prazo mais próximo é o SENAI+GIZ Fit for Carbon Pricing, em 28/08 (1 dia); em 31/08 vencem seis linhas FINEP, a chamada FAPESP-FACEPE e o CNPq ProÁfrica; em 01/09 vence a pré-proposta do Programa Desafios da Amazônia; em 02/09 vence a pré-proposta FAPESP PIPE Transição Energética.",
+    "Não confirmado: 8 itens (datas não extraídas de fontes oficiais após busca aprofundada) — listados ao final, com motivo.",
     "--"
   ],
   "alerta_prazo": "",
@@ -27,7 +27,7 @@
       "status": "aberto",
       "abertura": "2026",
       "encerramento": "28/08/2026",
-      "dias": "3",
+      "dias": "1",
       "tipo_publico": "Empresa",
       "publico": "Empresas que exportam/exportarão à UE (aço etc.)",
       "valor": "Suporte a 57 unidades (100% coberto)",
@@ -42,7 +42,7 @@
       "status": "aberto",
       "abertura": "06/02/2026",
       "encerramento": "31/08/2026",
-      "dias": "6",
+      "dias": "4",
       "tipo_publico": "Empresa",
       "publico": "Empresas + ICT",
       "valor": "R$ 300 mi chamada; R$ 10–30 mi/linha",
@@ -57,7 +57,7 @@
       "status": "aberto",
       "abertura": "13/02/2026",
       "encerramento": "31/08/2026",
-      "dias": "6",
+      "dias": "4",
       "tipo_publico": "Empresa",
       "publico": "Empresas + ICT",
       "valor": "R$ 150 mi",
@@ -72,7 +72,7 @@
       "status": "aberto",
       "abertura": "06/02/2026",
       "encerramento": "31/08/2026",
-      "dias": "6",
+      "dias": "4",
       "tipo_publico": "Empresa",
       "publico": "Empresas + ICT",
       "valor": "R$ 500 mi",
@@ -87,7 +87,7 @@
       "status": "aberto",
       "abertura": "27/04/2026",
       "encerramento": "31/08/2026",
-      "dias": "6",
+      "dias": "4",
       "tipo_publico": "Empresa",
       "publico": "Empresas + ICT",
       "valor": "R$ 120 mi; R$ 5–20 mi",
@@ -102,7 +102,7 @@
       "status": "aberto",
       "abertura": "06/02/2026",
       "encerramento": "31/08/2026",
-      "dias": "6",
+      "dias": "4",
       "tipo_publico": "Empresa",
       "publico": "Empresas + ICT",
       "valor": "R$ 200 mi",
@@ -117,7 +117,7 @@
       "status": "aberto",
       "abertura": "06/02/2026",
       "encerramento": "31/08/2026",
-      "dias": "6",
+      "dias": "4",
       "tipo_publico": "Empresa",
       "publico": "Empresas + ICT",
       "valor": "R$ 300 mi",
@@ -132,7 +132,7 @@
       "status": "aberto",
       "abertura": "03/07/2026",
       "encerramento": "31/08/2026",
-      "dias": "6",
+      "dias": "4",
       "tipo_publico": "Pessoa Física",
       "publico": "Pesquisadores ICTs SP/PE",
       "valor": "R$ 2,4 mi (até 4 propostas)",
@@ -142,33 +142,78 @@
       "grupo": null
     },
     {
-      "edital": "CNPq nº 24/2026 – Biotecnologia (PD&I)",
-      "fonte": "CNPq/MCTI/FNDCT",
+      "edital": "CNPq – ProÁfrica 2026",
+      "fonte": "CNPq/MCTI",
       "status": "aberto",
-      "abertura": "03/08/2026",
-      "encerramento": "18/09/2026",
-      "dias": "24",
+      "abertura": "25/05/2026",
+      "encerramento": "31/08/2026",
+      "dias": "4",
       "tipo_publico": "Pessoa Física",
-      "publico": "ICT/universidades/pesquisa",
-      "valor": "Não encontrado",
-      "contrapartida": "Não exige",
-      "exigencias": "Plataforma Carlos Chagas (PICC)",
-      "link": "https://www.gov.br/cnpq/pt-br",
-      "grupo": null
-    },
-    {
-      "edital": "CNPq – Apoio a Eventos de Empreendedorismo e Inovação (2ª rodada)",
-      "fonte": "CNPq",
-      "status": "aberto",
-      "abertura": "04/08/2026",
-      "encerramento": "18/09/2026",
-      "dias": "24",
-      "tipo_publico": "Empresa",
-      "publico": "ICTs/IES proponentes de eventos",
+      "publico": "Pesquisadores BR + africanos",
       "valor": "Não encontrado",
       "contrapartida": "Não exige",
       "exigencias": "Submissão PICC",
-      "link": "https://www.gov.br/cnpq/pt-br",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-15-2026/chamada-publica-cnpq-N-15-2026",
+      "grupo": null
+    },
+    {
+      "edital": "FAPESP PIPE Jornada Tecnológica – Transição Energética (Fase 1)",
+      "fonte": "FAPESP",
+      "status": "aberto",
+      "abertura": "03/08/2026",
+      "encerramento": "Pré: 02/09/2026; Completa: 03/11/2026",
+      "dias": "6",
+      "tipo_publico": "Empresa",
+      "publico": "Pequenas empresas de SP",
+      "valor": "Até R$ 500 mil/projeto",
+      "contrapartida": "Não exige",
+      "exigencias": "SAGe; empresa paulista",
+      "link": "https://fapesp.br/18291/chamada-de-propostas-para-o-programa-pipe-jornada-tecnologica-transicao-energetica-fase-1",
+      "grupo": null
+    },
+    {
+      "edital": "Programa Desafios da Amazônia (Amazônia+10)",
+      "fonte": "CONFAP/BNDES/Fundo Amazônia",
+      "status": "aberto",
+      "abertura": "01/07/2026",
+      "encerramento": "Pré: 01/09/2026; Final: 08/12/2026",
+      "dias": "5",
+      "tipo_publico": "Pessoa Física",
+      "publico": "Pesquisadores + orgs socioprodutivas (Amazônia Legal)",
+      "valor": "R$ 107,1 mi; R$ 6–8 mi/projeto",
+      "contrapartida": "Sim (FAPs, R$ 35,1 mi)",
+      "exigencias": "SIGCONFAP; cofinanciamento ≥1 FAP",
+      "link": "https://fapesp.br/18249/chamada-de-propostas-programa-desafios-da-amazonia",
+      "grupo": null
+    },
+    {
+      "edital": "FAPESP – JSPS Japão 2026 (Projetos Conjuntos)",
+      "fonte": "FAPESP + JSPS (Japão)",
+      "status": "aberto",
+      "abertura": "10/08/2026",
+      "encerramento": "03/09/2026",
+      "dias": "7",
+      "tipo_publico": "Pessoa Física",
+      "publico": "Pesquisadores SP + Japão",
+      "valor": "Até 3 projetos conjuntos",
+      "contrapartida": "Co-financiamento",
+      "exigencias": "Proposta conjunta; todas áreas",
+      "link": "https://fapesp.br/18319/chamada-conjunta-de-propostas-sociedade-japonesa-para-a-promocao-da-ciencia-jsps-e-fundacao-de-amparo-a-pesquisa-do-estado-de-sao-paulo-fapesp-2026",
+      "grupo": null
+    },
+    {
+      "edital": "FINEP e RCN (Noruega) – Petróleo, Energia e Transporte Verde",
+      "fonte": "FINEP + RCN (Noruega)",
+      "status": "aberto",
+      "abertura": "06/08/2026",
+      "encerramento": "09/09/2026",
+      "dias": "13",
+      "tipo_publico": "Empresa",
+      "publico": "Consórcios Brasil-Noruega",
+      "valor": "Não encontrado",
+      "contrapartida": "Co-financiamento bilateral",
+      "exigencias": "1ª etapa internacional",
+      "link": "https://www.finep.gov.br/e/chamada-publica/222684/1019381",
       "grupo": null
     },
     {
@@ -177,7 +222,7 @@
       "status": "aberto",
       "abertura": "31/07/2026",
       "encerramento": "08/09/2026",
-      "dias": "14",
+      "dias": "12",
       "tipo_publico": "Pessoa Física",
       "publico": "Pesquisadores (mestre/doutor) ICTs de MS",
       "valor": "Até R$ 1 mi",
@@ -187,12 +232,27 @@
       "grupo": null
     },
     {
+      "edital": "CNPq nº 30/2026 – Programa MAI/DAI (Mestrado e Doutorado para Inovação)",
+      "fonte": "CNPq/CAPES",
+      "status": "aberto",
+      "abertura": "19/08/2026",
+      "encerramento": "11/12/2026",
+      "dias": "76",
+      "tipo_publico": "Empresa",
+      "publico": "ICTs/IES com mestrado/doutorado",
+      "valor": "Não encontrado",
+      "contrapartida": "Não exige",
+      "exigencias": "Plataforma PICC",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-30-2026/chamada-publica-cnpq-N-30-2026",
+      "grupo": null
+    },
+    {
       "edital": "FAPERJ nº 12/2026 – Centelha 3 RJ (Fase 2)",
       "fonte": "FAPERJ/SECTI-RJ",
       "status": "aberto",
       "abertura": "15/06/2026",
       "encerramento": "11/09/2026",
-      "dias": "17",
+      "dias": "15",
       "tipo_publico": "Pessoa Física",
       "publico": "PF com ideia / startups nascentes (RJ)",
       "valor": "Até R$ 128 mil + bolsa",
@@ -207,7 +267,7 @@
       "status": "aberto",
       "abertura": "09/07/2026",
       "encerramento": "10/09/2026",
-      "dias": "16",
+      "dias": "14",
       "tipo_publico": "Pessoa Física",
       "publico": "PME líder de consórcio + universidades/grandes",
       "valor": "~€1,5 mi/projeto",
@@ -217,27 +277,12 @@
       "grupo": null
     },
     {
-      "edital": "FAPESP PIPE Jornada Tecnológica – Transição Energética (Fase 1)",
-      "fonte": "FAPESP",
-      "status": "aberto",
-      "abertura": "03/08/2026",
-      "encerramento": "Pré: 02/09/2026; Completa: 03/11/2026",
-      "dias": "8",
-      "tipo_publico": "Empresa",
-      "publico": "Pequenas empresas de SP",
-      "valor": "Até R$ 500 mil/projeto",
-      "contrapartida": "Não exige",
-      "exigencias": "SAGe; empresa paulista",
-      "link": "https://fapesp.br/18291/chamada-de-propostas-para-o-programa-pipe-jornada-tecnologica-transicao-energetica-fase-1",
-      "grupo": null
-    },
-    {
       "edital": "FAPESC/SCTI nº 50/2026 – SC Inovadora",
       "fonte": "FAPESC/SCTI-SC",
       "status": "aberto",
       "abertura": "14/08/2026",
       "encerramento": "14/09/2026",
-      "dias": "20",
+      "dias": "18",
       "tipo_publico": "Pessoa Física",
       "publico": "Pesquisadores/bolsistas (verticais SC)",
       "valor": "Não encontrado",
@@ -247,12 +292,57 @@
       "grupo": null
     },
     {
+      "edital": "CNPq nº 24/2026 – Biotecnologia (PD&I)",
+      "fonte": "CNPq/MCTI/FNDCT",
+      "status": "aberto",
+      "abertura": "03/08/2026",
+      "encerramento": "18/09/2026",
+      "dias": "22",
+      "tipo_publico": "Pessoa Física",
+      "publico": "ICT/universidades/pesquisa",
+      "valor": "Não encontrado",
+      "contrapartida": "Não exige",
+      "exigencias": "Plataforma Carlos Chagas (PICC)",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-24-2026/chamada-publica-cnpq-N-24-2026",
+      "grupo": null
+    },
+    {
+      "edital": "CNPq – Apoio a Eventos de Empreendedorismo e Inovação (2ª rodada)",
+      "fonte": "CNPq",
+      "status": "aberto",
+      "abertura": "04/08/2026",
+      "encerramento": "18/09/2026",
+      "dias": "22",
+      "tipo_publico": "Empresa",
+      "publico": "ICTs/IES proponentes de eventos",
+      "valor": "Não encontrado",
+      "contrapartida": "Não exige",
+      "exigencias": "Submissão PICC",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-13-2026/chamada-publica-cnpq-N-13-2026",
+      "grupo": null
+    },
+    {
+      "edital": "CNPq nº 29/2026 – RHAE IA (Pesquisadores em Empresas de IA)",
+      "fonte": "CNPq/MCTI",
+      "status": "aberto",
+      "abertura": "19/08/2026",
+      "encerramento": "09/10/2026",
+      "dias": "43",
+      "tipo_publico": "Pessoa Física",
+      "publico": "Pesquisadores em startups/empresas de IA",
+      "valor": "Não encontrado",
+      "contrapartida": "Não exige",
+      "exigencias": "Plataforma PICC; alinhamento PBIA",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-29-2026/chamadapublica29_2026_RHAEIA_2769274.pdf",
+      "grupo": null
+    },
+    {
       "edital": "British Council – Researcher Challenges Grants 2026",
       "fonte": "British Council",
       "status": "aberto",
       "abertura": "05/08/2026",
       "encerramento": "17/09/2026",
-      "dias": "23",
+      "dias": "21",
       "tipo_publico": "Empresa",
       "publico": "IES do Reino Unido (líder) + ICT sem fins lucrativos BR",
       "valor": "Até £40 mil/projeto",
@@ -267,7 +357,7 @@
       "status": "aberto",
       "abertura": "23/06/2026",
       "encerramento": "Pré: 22/09/2026; Completa: 15/02/2027",
-      "dias": "28",
+      "dias": "26",
       "tipo_publico": "Pessoa Física",
       "publico": "Universidades, P&D, empresas, ONGs, público",
       "valor": "~€40 mi totais",
@@ -277,12 +367,42 @@
       "grupo": null
     },
     {
+      "edital": "FAPESP – Ohio State University Joint Call 2026",
+      "fonte": "FAPESP + Ohio State (EUA)",
+      "status": "aberto",
+      "abertura": "27/07/2026",
+      "encerramento": "22/09/2026",
+      "dias": "26",
+      "tipo_publico": "Pessoa Física",
+      "publico": "Pesquisadores SP + Ohio (biodiversidade, energia, biotech, IA, quantum)",
+      "valor": "5 projetos, US$ 20 mil cada",
+      "contrapartida": "Co-financiamento simétrico",
+      "exigencias": "Proposta conjunta",
+      "link": "https://oia.osu.edu/news/2026/07/27/applications-open-joint-seed-funding",
+      "grupo": null
+    },
+    {
+      "edital": "CNPq nº 21/2026 – ERC-CONFAP (Projetos com Conselho Europeu de Pesquisa)",
+      "fonte": "CNPq/ERC",
+      "status": "aberto",
+      "abertura": "11/08/2026",
+      "encerramento": "30/09/2026",
+      "dias": "34",
+      "tipo_publico": "Pessoa Física",
+      "publico": "Pesquisadores BR + ERC",
+      "valor": "Não encontrado",
+      "contrapartida": "Não exige",
+      "exigencias": "Manifestação de Interesse + PICC",
+      "link": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-21-2026/chamada-publica-cnpq-N-21-2026",
+      "grupo": null
+    },
+    {
       "edital": "CNPq nº 20/2026 – Atlânticas (Mulheres na Ciência)",
       "fonte": "CNPq/MCTI/MMulheres",
       "status": "aberto",
       "abertura": "30/06/2026",
       "encerramento": "30/09/2026",
-      "dias": "36",
+      "dias": "34",
       "tipo_publico": "Pessoa Física",
       "publico": "Pessoa física (mulheres negras/quilombolas/indígenas/ciganas)",
       "valor": "Bolsas DT&I no exterior",
@@ -297,7 +417,7 @@
       "status": "aberto",
       "abertura": "03/07/2026",
       "encerramento": "25/09/2026",
-      "dias": "31",
+      "dias": "29",
       "tipo_publico": "Pessoa Física",
       "publico": "Professores/orientadores + estudantes escolas públicas MS",
       "valor": "R$ 7,2 mi (até 1.000 bolsas)",
@@ -312,7 +432,7 @@
       "status": "aberto",
       "abertura": "29/06/2026",
       "encerramento": "28/09/2026",
-      "dias": "34",
+      "dias": "32",
       "tipo_publico": "Empresa",
       "publico": "Pequenas empresas de SP",
       "valor": "Até R$ 500 mil/projeto",
@@ -322,27 +442,12 @@
       "grupo": null
     },
     {
-      "edital": "FAPESP – Ohio State University Joint Call 2026",
-      "fonte": "FAPESP + Ohio State (EUA)",
-      "status": "aberto",
-      "abertura": "27/07/2026",
-      "encerramento": "26/09/2026",
-      "dias": "32",
-      "tipo_publico": "Pessoa Física",
-      "publico": "Pesquisadores SP + Ohio (biodiversidade, energia, biotech, IA, quantum)",
-      "valor": "5 projetos, US$ 20 mil cada",
-      "contrapartida": "Co-financiamento simétrico",
-      "exigencias": "Proposta conjunta",
-      "link": "https://oia.osu.edu/news/2026/07/27/applications-open-joint-seed-funding",
-      "grupo": null
-    },
-    {
       "edital": "FINEP Mais Inovação Brasil R2 – Cadeias Agroindustriais Sustentáveis",
       "fonte": "MCTI/FINEP/FNDCT",
       "status": "aberto",
       "abertura": "06/02/2026",
       "encerramento": "30/09/2026",
-      "dias": "36",
+      "dias": "34",
       "tipo_publico": "Empresa",
       "publico": "Empresas + ICT obrigatória",
       "valor": "R$ 300 mi chamada",
@@ -357,7 +462,7 @@
       "status": "aberto",
       "abertura": "12/03/2026",
       "encerramento": "30/09/2026",
-      "dias": "36",
+      "dias": "34",
       "tipo_publico": "Empresa",
       "publico": "Empresas + ICT",
       "valor": "R$ 300 mi; R$ 5–40 mi",
@@ -372,7 +477,7 @@
       "status": "aberto",
       "abertura": "06/02/2026",
       "encerramento": "30/09/2026",
-      "dias": "36",
+      "dias": "34",
       "tipo_publico": "Empresa",
       "publico": "Empresas + ICT",
       "valor": "Não encontrado (pacote R$ 3,3 bi)",
@@ -382,12 +487,27 @@
       "grupo": null
     },
     {
+      "edital": "FAPESP – PRONEX 40/2026 (Redes de Excelência)",
+      "fonte": "FAPESP/CNPq",
+      "status": "aberto",
+      "abertura": "20/08/2026",
+      "encerramento": "16/10/2026",
+      "dias": "50",
+      "tipo_publico": "Pessoa Física",
+      "publico": "Pesquisadores ICTs SP (redes)",
+      "valor": "Até R$ 2,5 mi/rede",
+      "contrapartida": "Não exige",
+      "exigencias": "SAGe; Auxílio vigente",
+      "link": "https://fapesp.br/18317/programa-de-apoio-a-formacao-de-nucleos-de-excelencia-fapesp-mcticnpq-pronex-chamada-2026",
+      "grupo": null
+    },
+    {
       "edital": "Spain (CDTI) – Brazil (CONFAP) 2026–2027 Call",
       "fonte": "CDTI (ES) + CONFAP (BR)",
       "status": "aberto",
       "abertura": "2026 (EoI)",
       "encerramento": "08/10/2026",
-      "dias": "44",
+      "dias": "42",
       "tipo_publico": "Empresa",
       "publico": "Consórcio (1 empresa ES + 1 entidade BR)",
       "valor": "Mín. €250 mil (≥30% BR)",
@@ -397,48 +517,18 @@
       "grupo": null
     },
     {
-      "edital": "FAPESP – PRONEX 40/2026 (Redes de Excelência)",
-      "fonte": "FAPESP/CNPq",
+      "edital": "FAPESP – Biorrefinarias Integradas NWO 2026",
+      "fonte": "FAPESP + NWO (Holanda)",
       "status": "aberto",
-      "abertura": "Não encontrado",
-      "encerramento": "16/10/2026",
-      "dias": "52",
+      "abertura": "2026",
+      "encerramento": "20/10/2026",
+      "dias": "54",
       "tipo_publico": "Pessoa Física",
-      "publico": "Pesquisadores ICTs SP (redes)",
-      "valor": "Até R$ 2,5 mi/rede",
-      "contrapartida": "Não exige",
-      "exigencias": "SAGe",
-      "link": "https://fapesp.br/2185/chamadas-de-propostas-2026",
-      "grupo": null
-    },
-    {
-      "edital": "Programa Desafios da Amazônia (Amazônia+10)",
-      "fonte": "CONFAP/BNDES/Fundo Amazônia",
-      "status": "aberto",
-      "abertura": "01/07/2026",
-      "encerramento": "Pré: 01/09/2026; Final: 08/12/2026",
-      "dias": "7",
-      "tipo_publico": "Pessoa Física",
-      "publico": "Pesquisadores + orgs socioprodutivas (Amazônia Legal)",
-      "valor": "R$ 107,1 mi; R$ 6–8 mi/projeto",
-      "contrapartida": "Sim (FAPs, R$ 35,1 mi)",
-      "exigencias": "SIGCONFAP; cofinanciamento ≥1 FAP",
-      "link": "https://fapesp.br/18249/chamada-de-propostas-programa-desafios-da-amazonia",
-      "grupo": null
-    },
-    {
-      "edital": "CNPq – ProÁfrica 2026",
-      "fonte": "CNPq/MCTI",
-      "status": "aberto",
-      "abertura": "Não encontrado",
-      "encerramento": "31/08/2026",
-      "dias": "6",
-      "tipo_publico": "Pessoa Física",
-      "publico": "Pesquisadores BR + africanos",
+      "publico": "Pesquisadores SP + Holanda (biorrefinarias)",
       "valor": "Não encontrado",
-      "contrapartida": "Não exige",
-      "exigencias": "Submissão PICC",
-      "link": "https://www.gov.br/cnpq/pt-br",
+      "contrapartida": "Co-financiamento",
+      "exigencias": "Proposta conjunta",
+      "link": "https://fapesp.br/17977/chamada-conjunta-de-propostas-fapespnwo-2026-biorrefinarias-integradas-para-um-futuro-circular",
       "grupo": null
     },
     {
@@ -634,6 +724,20 @@
       "justificativa": "Bioprocessos, biotecnologia industrial e agropecuária casam com ISI Biomassa e IST Alimentos."
     },
     {
+      "edital": "CNPq RHAE IA",
+      "institutos": "—",
+      "grau": "baixa",
+      "foco_educacional": "Não",
+      "justificativa": "Pesquisadores em empresas de IA; foco em startups de IA, não industrial direto."
+    },
+    {
+      "edital": "CNPq MAI/DAI (Mestrado/Doutorado)",
+      "institutos": "—",
+      "grau": "baixa",
+      "foco_educacional": "Sim (formação de recursos humanos)",
+      "justificativa": "Programa de formação acadêmica; foco educacional sem componente direto de P&D dos institutos."
+    },
+    {
       "edital": "CNPq Atlânticas (Mulheres na Ciência)",
       "institutos": "—",
       "grau": "none",
@@ -653,6 +757,13 @@
       "grau": "baixa",
       "foco_educacional": "Não (eventos)",
       "justificativa": "Fomento a eventos, não projeto de P&D direto; aderência indireta."
+    },
+    {
+      "edital": "CNPq ERC-CONFAP",
+      "institutos": "ISI Biomassa; IST Eficiência",
+      "grau": "media",
+      "foco_educacional": "Não",
+      "justificativa": "Projetos com ERC; potencial para pesquisa de fronteira em áreas estratégicas."
     },
     {
       "edital": "FUNDECT PAE-MS (Eventos)",
@@ -697,7 +808,7 @@
       "justificativa": "Transição energética alinhada, mas restrita a SP/PE."
     },
     {
-      "edital": "FAPESP PRONEX",
+      "edital": "FAPESP PRONEX (Redes de Excelência)",
       "institutos": "—",
       "grau": "baixa",
       "foco_educacional": "Não",
@@ -709,6 +820,20 @@
       "grau": "media",
       "foco_educacional": "Não",
       "justificativa": "Biodiversidade, biotech e transição energética alinham-se; restrito a SP/Ohio."
+    },
+    {
+      "edital": "FAPESP–JSPS Japão",
+      "institutos": "—",
+      "grau": "baixa",
+      "foco_educacional": "Não",
+      "justificativa": "Projetos conjuntos Brasil-Japão; sem tema específico alinhado."
+    },
+    {
+      "edital": "FAPESP–NWO Biorrefinarias",
+      "institutos": "ISI Biomassa",
+      "grau": "alta",
+      "foco_educacional": "Não",
+      "justificativa": "Biorrefinarias integradas para futuro circular; alinhamento direto com ISI Biomassa."
     },
     {
       "edital": "Eurostars Call 11",
@@ -732,6 +857,13 @@
       "justificativa": "Desafios globais de desenvolvimento; parceria UK lidera."
     },
     {
+      "edital": "FINEP-RCN Noruega",
+      "institutos": "ISI Biomassa; IST Eficiência",
+      "grau": "alta",
+      "foco_educacional": "Não",
+      "justificativa": "Energia limpa e transporte verde; cooperação Brasil-Noruega relevante para descarbonização."
+    },
+    {
       "edital": "Spain-CDTI Brazil",
       "institutos": "IST Eficiência Operacional; ISI Biomassa",
       "grau": "alta",
@@ -746,7 +878,7 @@
       "justificativa": "Sociobioeconomia amazônica (MT/FAPEMAT participa); resíduos/biomassa relevantes."
     },
     {
-      "edital": "SENAI+GIZ Induz / Fit for Carbon Pricing",
+      "edital": "SENAI+GIZ Fit for Carbon Pricing",
       "institutos": "IST Eficiência Operacional; ISI Biomassa",
       "grau": "alta",
       "foco_educacional": "Não",
@@ -806,7 +938,7 @@
     {
       "edital": "CNPq/FNDCT nº 06/2026 – Universal",
       "fonte": "CNPq",
-      "motivo": "Prazo final de submissão não localizado nas fontes indexadas; abrir PDF oficial no portal CNPq."
+      "motivo": "Prazo final de submissão encerrado em 03/08/2026; resultados em análise."
     },
     {
       "edital": "FAPERJ nº 15/2026 – Prioridade Indústria RJ 4.0",
@@ -831,7 +963,7 @@
     {
       "edital": "FUNDECT-MS nº 01/2026 – Centelha MS (3ª edição)",
       "fonte": "FUNDECT",
-      "motivo": "Página \"Em andamento/Alteração de Cronograma\" com prazos conflitantes (já anteriores a 25/08); status indefinido."
+      "motivo": "Página \"Em andamento/Alteração de Cronograma\" com prazos conflitantes (já anteriores a 27/08); status indefinido."
     },
     {
       "edital": "InovAtiva Brasil 2026 (2º semestre)",
@@ -842,11 +974,6 @@
       "edital": "Fundação Grupo Boticário – 57º Edital Conservação da Natureza",
       "fonte": "FGB",
       "motivo": "Prazo de submissão \"indefinido\" nas fontes consultadas."
-    },
-    {
-      "edital": "AGEPRO / SEDHAST / SEMAGRO / Prefeituras MS / Desenvolve MS",
-      "fonte": "MS",
-      "motivo": "Nenhum edital próprio de fomento à inovação com data/link em 2026 localizado."
     }
   ]
 }
