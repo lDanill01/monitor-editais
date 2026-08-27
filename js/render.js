@@ -108,95 +108,102 @@ const Render = (() => {
       return null;
     }
 
-    const cards = [];
-
-    // Novos editais
+    // Stats row
+    const statsItems = [];
     if (n.novos_editais?.length) {
-      const rows = n.novos_editais.map(e => 
-        el('tr', {}, [
-          el('td', { text: e.Edital }),
-          el('td', { text: e.Fonte }),
-          el('td', { text: e.Abertura }),
-          el('td', { text: e.Encerramento }),
-          el('td', { text: e.Destaque }),
-        ])
-      );
-      const table = el('table', { class: 'table' }, [
-        el('thead', {}, [el('tr', {}, [
-          el('th', { text: 'Edital' }),
-          el('th', { text: 'Fonte' }),
-          el('th', { text: 'Abertura' }),
-          el('th', { text: 'Encerramento' }),
-          el('th', { text: 'Destaque' }),
-        ])]),
-        el('tbody', {}, rows),
-      ]);
-      cards.push(el('div', { class: 'spec-card' }, [
-        el('div', { class: 'spec-card__header' }, [
-          el('span', { class: 'pill p-open', text: String(n.novos_editais.length) }),
-          el('h3', { text: 'Novos editais abertos desde a última atualização' }),
+      statsItems.push(el('div', { class: 'nov-stat nov-stat--open' }, [
+        el('div', { class: 'nov-stat__icon', html: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>' }),
+        el('div', { class: 'nov-stat__info' }, [
+          el('div', { class: 'nov-stat__n', text: String(n.novos_editais.length) }),
+          el('div', { class: 'nov-stat__l', text: 'Novos editais' }),
         ]),
-        el('div', { class: 'spec-card__body' }, [table]),
       ]));
     }
-
-    // Editais encerrados
     if (n.editais_encerrados?.length) {
-      const rows = n.editais_encerrados.map(e =>
-        el('tr', {}, [
-          el('td', { text: e.Edital }),
-          el('td', { text: e.Fonte }),
-          el('td', { text: e.Motivo }),
-        ])
-      );
-      const table = el('table', { class: 'table' }, [
-        el('thead', {}, [el('tr', {}, [
-          el('th', { text: 'Edital' }),
-          el('th', { text: 'Fonte' }),
-          el('th', { text: 'Motivo' }),
-        ])]),
-        el('tbody', {}, rows),
-      ]);
-      cards.push(el('div', { class: 'spec-card' }, [
-        el('div', { class: 'spec-card__header' }, [
-          el('span', { class: 'pill p-closed', text: String(n.editais_encerrados.length) }),
-          el('h3', { text: 'Editais encerrados desde a última atualização' }),
+      statsItems.push(el('div', { class: 'nov-stat nov-stat--closed' }, [
+        el('div', { class: 'nov-stat__icon', html: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>' }),
+        el('div', { class: 'nov-stat__info' }, [
+          el('div', { class: 'nov-stat__n', text: String(n.editais_encerrados.length) }),
+          el('div', { class: 'nov-stat__l', text: 'Encerrados' }),
         ]),
-        el('div', { class: 'spec-card__body' }, [table]),
+      ]));
+    }
+    if (n.alteracoes_prazo?.length) {
+      statsItems.push(el('div', { class: 'nov-stat nov-stat--changed' }, [
+        el('div', { class: 'nov-stat__icon', html: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>' }),
+        el('div', { class: 'nov-stat__info' }, [
+          el('div', { class: 'nov-stat__n', text: String(n.alteracoes_prazo.length) }),
+          el('div', { class: 'nov-stat__l', text: 'Alterados' }),
+        ]),
       ]));
     }
 
-    // Alterações de prazo
-    if (n.alteracoes_prazo?.length) {
-      const rows = n.alteracoes_prazo.map(e =>
-        el('tr', {}, [
-          el('td', { text: e.Edital }),
-          el('td', { text: e.Alteração }),
-        ])
-      );
-      const table = el('table', { class: 'table' }, [
-        el('thead', {}, [el('tr', {}, [
-          el('th', { text: 'Edital' }),
-          el('th', { text: 'Alteração' }),
-        ])]),
-        el('tbody', {}, rows),
-      ]);
-      cards.push(el('div', { class: 'spec-card' }, [
-        el('div', { class: 'spec-card__header' }, [
-          el('span', { class: 'pill p-soon', text: String(n.alteracoes_prazo.length) }),
-          el('h3', { text: 'Alterações de prazo' }),
-        ]),
-        el('div', { class: 'spec-card__body' }, [table]),
-      ]));
+    // Manta todos os itens em um array único com tipo
+    const allItems = [];
+
+    if (n.novos_editais?.length) {
+      n.novos_editais.forEach(e => {
+        allItems.push({ type: 'novo', ...e });
+      });
     }
+    if (n.editais_encerrados?.length) {
+      n.editais_encerrados.forEach(e => {
+        allItems.push({ type: 'encerrado', ...e });
+      });
+    }
+    if (n.alteracoes_prazo?.length) {
+      n.alteracoes_prazo.forEach(e => {
+        allItems.push({ type: 'alterado', ...e });
+      });
+    }
+
+    // Renderiza todos como cards uniformes
+    const tagMap = {
+      novo: { label: 'Novo', cls: 'pill p-open' },
+      encerrado: { label: 'Encerrado', cls: 'pill p-closed' },
+      alterado: { label: 'Prazo alterado', cls: 'pill p-soon' },
+    };
+
+    const cards = allItems.map(item => {
+      const tag = tagMap[item.type];
+      const tags = [];
+      const fonte = item.Fonte || item.fonte || '';
+      const abertura = item.Abertura || '';
+      const encerramento = item.Encerramento || item.encerramento || '';
+      const motivo = item.Motivo || item.motivo || '';
+      const alteracao = item.Alteração || item.alteracao || '';
+
+      if (fonte) tags.push(el('span', { class: 'nov-tag', text: fonte }));
+      if (abertura) tags.push(el('span', { class: 'nov-tag nov-tag--muted', text: 'Abre: ' + abertura }));
+
+      const destaque = item.Destaque || motivo || alteracao || '';
+
+      return el('div', { class: 'nov-card' }, [
+        el('div', { class: 'nov-card__head' }, [
+          el('div', { class: 'nov-card__title', text: item.Edital || item.edital || '' }),
+          el('span', { class: tag.cls, text: tag.label }),
+        ]),
+        el('div', { class: 'nov-card__tags' }, tags),
+        el('div', { class: 'nov-card__body', text: destaque }),
+        encerramento ? el('div', { class: 'nov-card__footer' }, [
+          el('span', { class: 'nov-deadline' }, [
+            el('b', { text: 'Encerramento: ' }),
+            document.createTextNode(encerramento),
+          ]),
+        ]) : null,
+      ]);
+    });
 
     return el('section', { class: 'doc', id: 'novidades' }, [
-      el('div', { class: 'sec-head' }, [
-        el('span', { class: 'tag', text: 'Atualizações' }),
-        el('h2', { text: 'Novidades desde a última atualização' }),
-        el('p', { text: 'Mudanças identificadas entre a última atualização e a data de referência atual.' }),
+      el('div', { class: 'wrap' }, [
+        el('div', { class: 'sec-head' }, [
+          el('span', { class: 'tag', text: 'Atualizações' }),
+          el('h2', { text: 'Novidades desde a última atualização' }),
+          el('p', { text: 'Mudanças identificadas entre a última atualização (25/08/2026) e a data de referência atual.' }),
+        ]),
+        el('div', { class: 'nov-stats' }, statsItems),
+        el('div', { class: 'nov-cards' }, cards),
       ]),
-      el('div', { class: 'cards-grid' }, cards),
     ]);
   }
 
