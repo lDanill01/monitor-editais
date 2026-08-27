@@ -5,6 +5,35 @@
 
 ---
 
+## Novidades desde a última atualização (25/08/2026)
+
+### Novos editais abertos desde 25/08
+
+| Edital | Fonte | Abertura | Encerramento | Destaque |
+|---|---|---|---|---|
+| CNPq nº 30/2026 – Programa MAI/DAI (Mestrado e Doutorado para Inovação) | CNPq/CAPES | 19/08/2026 | 11/12/2026 | Programa de formação de recursos humanos em parceria universidade-empresa; bolsas de mestrado e doutorado voltados à inovação. |
+| CNPq nº 29/2026 – RHAE IA (Pesquisadores em Empresas de IA) | CNPq/MCTI | 19/08/2026 | 09/10/2026 | Inserção de pesquisadores em startups/empresas que desenvolvam soluções de IA, alinhado ao Plano Brasileiro de IA (PBIA). |
+| CNPq nº 21/2026 – ERC-CONFAP (Projetos com Conselho Europeu de Pesquisa) | CNPq/ERC | 11/08/2026 | 30/09/2026 | Projetos colaborativos com pesquisadores apoiados pelo ERC; pesquisa de fronteira em áreas estratégicas. |
+| FAPESP 41/2026 – JSPS Japão (Projetos Conjuntos) | FAPESP + JSPS | 10/08/2026 | 03/09/2026 | Até 3 projetos conjuntos de pesquisa colaborativa Brasil-Japão em todas as áreas do conhecimento. |
+| FAPESP 40/2026 – PRONEX Redes de Excelência | FAPESP/CNPq | 20/08/2026 | 16/10/2026 | Redes de pesquisa em temas estratégicos (biotecnologia, transição energética, IA, quantum); até R$ 2,5 mi/rede. |
+| FINEP e RCN (Noruega) – Petróleo, Energia e Transporte Verde | FINEP + RCN | 06/08/2026 | 09/09/2026 | Cooperação Brasil-Noruega em energia limpa, transporte marítimo verde e petróleo ambientalmente amigável. |
+| FAPESP–NWO Biorrefinarias Integradas para um Futuro Circular | FAPESP + NWO (Holanda) | 2026 | 20/10/2026 | Projetos bilaterais de pesquisa e inovação em biorrefinarias integradas para economia circular. |
+
+### Editais encerrados desde 25/08
+
+| Edital | Fonte | Motivo do encerramento |
+|---|---|---|
+| CNPq/FNDCT nº 06/2026 – Universal | CNPq | Submissões encerradas em 03/08/2026; resultados em análise. |
+
+### Alterações de prazo
+
+| Edital | Alteração |
+|---|---|
+| FAPESP–Ohio State University Joint Call 2026 | Prazo de encerramento alterado de 26/09 para **22/09/2026**. |
+| CNPq – ProÁfrica 2026 | Data de abertura confirmada: **25/05/2026** (anteriormente "Não encontrado"). |
+
+---
+
 ## Resumo Executivo
 
 - **Abertos agora:** 29 editais (nacionais, estaduais e internacionais) com inscrições vigentes em 27/08/2026, mais 5 linhas de fluxo contínuo (sem prazo).

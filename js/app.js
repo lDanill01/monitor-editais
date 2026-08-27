@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ========== Scroll spy ========== */
   const navLinks = document.querySelectorAll('.docnav nav a');
-  const sectionIds = ['resumo', 'aderencia', 'editais', 'nao-confirmado'];
+  const sectionIds = ['novidades', 'resumo', 'aderencia', 'editais', 'nao-confirmado'];
   function spy() {
     const y = window.scrollY + 90;
     let active = sectionIds[0];

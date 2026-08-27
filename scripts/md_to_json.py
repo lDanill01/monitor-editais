@@ -59,11 +59,73 @@ def parse_table(section_lines):
     return headers, rows
 
 
+def parse_novidades(section_lines):
+    """Parseia a seção de novidades com suas subseções."""
+    novidades = {
+        "novos_editais": [],
+        "editais_encerrados": [],
+        "alteracoes_prazo": []
+    }
+    
+    current_subsection = None
+    headers = None
+    rows = []
+    
+    for line in section_lines:
+        stripped = line.strip()
+        
+        # Detecta subseções
+        if stripped.startswith("### "):
+            # Processa subseção anterior se existir
+            if current_subsection and rows:
+                if current_subsection == "novos_editais":
+                    novidades["novos_editais"] = rows
+                elif current_subsection == "editais_encerrados":
+                    novidades["editais_encerrados"] = rows
+                elif current_subsection == "alteracoes_prazo":
+                    novidades["alteracoes_prazo"] = rows
+                rows = []
+                headers = None
+            
+            if "novos editais" in stripped.lower():
+                current_subsection = "novos_editais"
+            elif "encerrados" in stripped.lower():
+                current_subsection = "editais_encerrados"
+            elif "alterações" in stripped.lower() or "alteracoes" in stripped.lower():
+                current_subsection = "alteracoes_prazo"
+            continue
+        
+        # Parseia tabelas
+        if stripped.startswith("|"):
+            cells = [c.strip() for c in stripped.strip("|").split("|")]
+            if all(set(c) <= set("-: ") for c in cells):
+                continue
+            if headers is None:
+                headers = cells
+            else:
+                row = {}
+                for i, h in enumerate(headers):
+                    row[h] = cells[i] if i < len(cells) else ""
+                rows.append(row)
+    
+    # Processa última subseção
+    if current_subsection and rows:
+        if current_subsection == "novos_editais":
+            novidades["novos_editais"] = rows
+        elif current_subsection == "editais_encerrados":
+            novidades["editais_encerrados"] = rows
+        elif current_subsection == "alteracoes_prazo":
+            novidades["alteracoes_prazo"] = rows
+    
+    return novidades
+
+
 def parse_markdown(text: str) -> dict:
     """Parseia o markdown estruturado do monitor de editais."""
     data = {
         "meta": {},
         "stats": {},
+        "novidades": {},
         "resumo_executivo": [],
         "alerta_prazo": "",
         "editais": [],
@@ -123,6 +185,11 @@ def parse_markdown(text: str) -> dict:
         # nao_confirmado: "9 itens ... não confirmado"
         m = re.search(r"(\d+)\s+itens?", clean, re.I)
         if m: data["stats"]["nao_confirmado"] = int(m.group(1))
+
+    # --- Novidades desde última atualização ---
+    novidades_lines = find_section(lines, "Novidades desde")
+    if novidades_lines:
+        data["novidades"] = parse_novidades(novidades_lines)
 
     # --- Editais ---
     editais_lines = find_section(lines, "Tabela de Editais")

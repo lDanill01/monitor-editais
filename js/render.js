@@ -101,6 +101,105 @@ const Render = (() => {
     ]);
   }
 
+  /* ========== Novidades ========== */
+  function novidades(data) {
+    const n = data.novidades;
+    if (!n || (!n.novos_editais?.length && !n.editais_encerrados?.length && !n.alteracoes_prazo?.length)) {
+      return null;
+    }
+
+    const cards = [];
+
+    // Novos editais
+    if (n.novos_editais?.length) {
+      const rows = n.novos_editais.map(e => 
+        el('tr', {}, [
+          el('td', { text: e.Edital }),
+          el('td', { text: e.Fonte }),
+          el('td', { text: e.Abertura }),
+          el('td', { text: e.Encerramento }),
+          el('td', { text: e.Destaque }),
+        ])
+      );
+      const table = el('table', { class: 'table' }, [
+        el('thead', {}, [el('tr', {}, [
+          el('th', { text: 'Edital' }),
+          el('th', { text: 'Fonte' }),
+          el('th', { text: 'Abertura' }),
+          el('th', { text: 'Encerramento' }),
+          el('th', { text: 'Destaque' }),
+        ])]),
+        el('tbody', {}, rows),
+      ]);
+      cards.push(el('div', { class: 'spec-card' }, [
+        el('div', { class: 'spec-card__header' }, [
+          el('span', { class: 'pill p-open', text: String(n.novos_editais.length) }),
+          el('h3', { text: 'Novos editais abertos desde a última atualização' }),
+        ]),
+        el('div', { class: 'spec-card__body' }, [table]),
+      ]));
+    }
+
+    // Editais encerrados
+    if (n.editais_encerrados?.length) {
+      const rows = n.editais_encerrados.map(e =>
+        el('tr', {}, [
+          el('td', { text: e.Edital }),
+          el('td', { text: e.Fonte }),
+          el('td', { text: e.Motivo }),
+        ])
+      );
+      const table = el('table', { class: 'table' }, [
+        el('thead', {}, [el('tr', {}, [
+          el('th', { text: 'Edital' }),
+          el('th', { text: 'Fonte' }),
+          el('th', { text: 'Motivo' }),
+        ])]),
+        el('tbody', {}, rows),
+      ]);
+      cards.push(el('div', { class: 'spec-card' }, [
+        el('div', { class: 'spec-card__header' }, [
+          el('span', { class: 'pill p-closed', text: String(n.editais_encerrados.length) }),
+          el('h3', { text: 'Editais encerrados desde a última atualização' }),
+        ]),
+        el('div', { class: 'spec-card__body' }, [table]),
+      ]));
+    }
+
+    // Alterações de prazo
+    if (n.alteracoes_prazo?.length) {
+      const rows = n.alteracoes_prazo.map(e =>
+        el('tr', {}, [
+          el('td', { text: e.Edital }),
+          el('td', { text: e.Alteração }),
+        ])
+      );
+      const table = el('table', { class: 'table' }, [
+        el('thead', {}, [el('tr', {}, [
+          el('th', { text: 'Edital' }),
+          el('th', { text: 'Alteração' }),
+        ])]),
+        el('tbody', {}, rows),
+      ]);
+      cards.push(el('div', { class: 'spec-card' }, [
+        el('div', { class: 'spec-card__header' }, [
+          el('span', { class: 'pill p-soon', text: String(n.alteracoes_prazo.length) }),
+          el('h3', { text: 'Alterações de prazo' }),
+        ]),
+        el('div', { class: 'spec-card__body' }, [table]),
+      ]));
+    }
+
+    return el('section', { class: 'doc', id: 'novidades' }, [
+      el('div', { class: 'sec-head' }, [
+        el('span', { class: 'tag', text: 'Atualizações' }),
+        el('h2', { text: 'Novidades desde a última atualização' }),
+        el('p', { text: 'Mudanças identificadas entre a última atualização e a data de referência atual.' }),
+      ]),
+      el('div', { class: 'cards-grid' }, cards),
+    ]);
+  }
+
   /* ========== Editais table ========== */
   function editaisSection(data) {
     const editais = data.editais;
@@ -331,7 +430,7 @@ const Render = (() => {
     const nav = document.querySelector('.docnav nav');
     if (nav) {
       nav.innerHTML = '';
-      [['#resumo', 'Resumo'], ['#aderencia', 'Aderência SENAI'], ['#editais', 'Editais'], ['#nao-confirmado', 'Não confirmado']].forEach(([href, label], i) => {
+      [['#novidades', 'Novidades'], ['#resumo', 'Resumo'], ['#aderencia', 'Aderência SENAI'], ['#editais', 'Editais'], ['#nao-confirmado', 'Não confirmado']].forEach(([href, label], i) => {
         const a = el('a', { href, text: label });
         if (i === 0) a.classList.add('active');
         nav.appendChild(a);
@@ -350,6 +449,13 @@ const Render = (() => {
     main.innerHTML = '';
 
     const wrap1 = el('div', { class: 'wrap' }, [stats(data.stats)]);
+    
+    // Adiciona novidades antes do resumo executivo
+    const novidadesEl = novidades(data);
+    if (novidadesEl) {
+      wrap1.appendChild(novidadesEl);
+    }
+    
     wrap1.appendChild(resumo(data));
     main.appendChild(wrap1);
 
