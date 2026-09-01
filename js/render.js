@@ -60,8 +60,8 @@ const Render = (() => {
       ]),
       el('div', { class: 'logo-badge' }, [el('img', { src: 'assets/logo-senai-fiems.png', alt: 'SENAI Sistema FIEMS' })]),
       el('div', { class: 'wrap' }, [
-        el('div', { class: 'eyebrow', text: 'Sistema FIEMS · SENAI MS — Monitoramento de Fomento' }),
-        el('h1', {}, [el('span', { text: 'Monitoramento de' }), el('br'), el('em', { text: 'Editais de Inovação' })]),
+        el('div', { class: 'eyebrow', text: 'Sistema FIEMS · SENAI MS — Oportunidades de Fomento' }),
+        el('h1', {}, [el('span', { text: 'Oportunidades de' }), el('br'), el('em', { text: 'Editais de Inovação' })]),
         el('p', { class: 'lead', text: 'Editais, chamadas públicas e programas de fomento abertos ou próximos de abrir — nacional, estadual (MS) e internacionais com elegibilidade do Brasil.' }),
         meta,
       ]),
