@@ -9,6 +9,7 @@ Painel web estático que monitora editais, chamadas públicas e programas de fom
 - **Filtros dependentes** — ao selecionar um filtro, os demais se adequam automaticamente
 - **Cards mobile** — em telas pequenas, tabelas são substituídas por cards legíveis
 - **Dados embutidos** — funciona com `file://` (duplo-clique) sem servidor
+- **Newsletter gratuita** — assinatura no site (nome, e-mail, consentimento LGPD) com double opt-in e digest semanal por e-mail — arquitetura 100% gratuita (Google Apps Script + Gmail SMTP), ver `PRD.md`
 
 ## Estrutura
 
@@ -23,10 +24,20 @@ Painel web estático que monitora editais, chamadas públicas e programas de fom
 │   └── app.js                 Entry point: scroll spy, nav, drawer
 ├── data/
 │   ├── editais.json           Fonte única de verdade (JSON)
-│   └── editais.js             Wrapper JS: window.EDITAIS_DATA
+│   ├── editais.js             Wrapper JS: window.EDITAIS_DATA
+│   └── newsletter.js          Config da newsletter (webappUrl, contactEmail, siteUrl)
+├── js/
+│   ├── render.js              Gera DOM a partir do JSON
+│   ├── filters.js             Lógica de filtros com dependência
+│   ├── newsletter.js          Seção/formulário de assinatura (consentimento LGPD)
+│   └── app.js                 Entry point: scroll spy, nav, drawer
 ├── scripts/
 │   ├── md_to_json.py          Parser: Markdown → JSON + JS
-│   └── render_static.py       Gerador HTML estático (opcional)
+│   ├── render_static.py       Gerador HTML estático (opcional)
+│   ├── email_template.py      Design do e-mail digest (HTML + texto)
+│   ├── send_newsletter.py     Envio via Gmail SMTP (lotes, log anti-duplicata)
+│   ├── newsletter_config.json Config não-secreta da newsletter
+│   └── google/appsscript_subscribers.gs  Backend Google (colar no Apps Script)
 ├── assets/
 │   ├── logo-senai-fiems.png   Logo SENAI MS
 │   └── palette.json           Paleta de cores
@@ -43,8 +54,10 @@ Monitoramento_Editais_Inovacao_YYYY-MM-DD.md  (edição manual)
         ▼  python scripts/md_to_json.py
 data/editais.json + data/editais.js           (atualizados)
         │
-        ▼  carregamento via <script>
+        ▼  git push (opcional — publica no GitHub Pages)
+        ▼  python scripts/send_newsletter.py --send
 index.html → render.js → DOM                  (tabelas, filtros, cards)
+newsletter → Gmail SMTP                       (digest para assinantes)
 ```
 
 ### Atualizar dados
@@ -55,6 +68,18 @@ index.html → render.js → DOM                  (tabelas, filtros, cards)
    python scripts/md_to_json.py data/Monitoramento_Editais_Inovacao_2026-08-24.md data/editais.json
    ```
 3. Abrir `index.html` no navegador
+
+### Enviar a newsletter (após configurar — ver PRD.md)
+
+```powershell
+python scripts/send_newsletter.py --preview      # revisa o design no navegador
+python scripts/send_newsletter.py --test-to eu@exemplo.com   # teste individual
+python scripts/send_newsletter.py --send         # envia aos assinantes ativos
+```
+
+O envio usa apenas conta Google gratuita (Gmail SMTP + Apps Script); segredos
+ficam em variáveis de ambiente (`GMAIL_USER`, `GMAIL_APP_PASSWORD`,
+`NEWSLETTER_API_KEY`) — nunca no repositório.
 
 ### Gerar HTML estático (opcional)
 

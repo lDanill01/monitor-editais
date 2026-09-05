@@ -22,7 +22,14 @@ index.html                                      (thin shell — no hardcoded dat
    python scripts/md_to_json.py Monitoramento_Editais_Inovacao_2026-08-24.md data/editais.json
    ```
    This generates both `data/editais.json` and `data/editais.js`.
-3. **Done.** Open `index.html` — all tables, stats, filters update automatically.
+3. **Publish + send the newsletter digest** (optional — requires one-time setup, see `PRD.md`):
+   ```powershell
+   git push                                            # publishes via GitHub Pages
+   python scripts/send_newsletter.py --preview         # review email design
+   python scripts/send_newsletter.py --send            # send to active subscribers
+   ```
+   Secrets live in env vars (`GMAIL_USER`, `GMAIL_APP_PASSWORD`, `NEWSLETTER_API_KEY`) — never in the repo.
+4. **Done.** Open `index.html` — all tables, stats, filters update automatically.
 
 ### Optional: generate a fully static HTML (no JS dependency)
 ```powershell
@@ -44,17 +51,25 @@ No lint/test/typecheck config exists.
 ```
 index.html                  — thin shell: loads css + js, empty <main> rendered at runtime
 css/tokens.css              — SENAI design tokens (colors, fonts, radii, shadows)
-css/style.css               — layout, tables, filters, responsive, cards
+css/style.css               — layout, tables, filters, responsive, cards, newsletter form
 js/render.js                — pure DOM generation from JSON (Render.build, statusPill, gradeBadge)
 js/filters.js               — filter logic for editais + aderência (Filters.setupAderencia, Filters.setupEditais)
-js/app.js                   — entry point: scroll spy, nav toggle, drawer, embedded data → render → wire filters
+js/newsletter.js            — newsletter signup section: form (nome, e-mail, consent), Apps Script POST via hidden iframe, mailto fallback (Newsletter.mount/build/wire)
+js/app.js                   — entry point: scroll spy, nav toggle, drawer, embedded data → render → wire filters → mount newsletter
 data/editais.json           — SINGLE SOURCE OF TRUTH: meta, stats, resumo, editais[], aderencia[], nao_confirmado[]
 data/editais.js             — embedded JS wrapper: window.EDITAIS_DATA = {...} (works with file://)
+data/newsletter.js          — newsletter config: window.NEWSLETTER_CONFIG = { webappUrl, contactEmail, siteUrl }
 scripts/md_to_json.py       — parses Monitoramento_*.md → data/editais.json + data/editais.js
-scripts/render_static.py    — generates standalone index.html from JSON (optional)
+scripts/render_static.py    — generates standalone index.html from JSON (optional; includes newsletter section)
+scripts/email_template.py   — builds the weekly digest email (SENAI-branded, email-safe HTML + plain text) from editais.json
+scripts/send_newsletter.py  — sends the digest via Gmail SMTP (subscribers from Apps Script Web App; batch + sent-log)
+scripts/newsletter_config.json — non-secret newsletter config (webapp_url, site_url, sender_name, smtp, batch_size)
+scripts/google/appsscript_subscribers.gs — 100% free Google backend (paste into the "Assinantes" sheet's Apps Script): subscribe w/ double opt-in, confirm, cancel, list?key=
+newsletter/                 — gitignored local output: preview_*.html + sent_log.json
 assets/logo-senai-fiems.png — brand asset
 assets/palette.json         — brand palette
 .design/Senai/              — source of truth for visual identity (read before CSS changes)
+PRD.md                      — product requirements: newsletter feature, setup guide, tasks, roadmap
 PROMPT.md                   — 7-step methodology for every monitoring run
 Monitoramento_Editais_Inovacao_YYYY-MM-DD.md — dated markdown export / editor input
 ```
@@ -125,7 +140,8 @@ Institute keys: `alimentos` | `eficiencia` | `biomassa` | `todos`.
 - Encoding: `UTF-8` with pt-BR text.
 
 ## Gotchas
-- Not a git repo (`git` commands fail).
-- No CI, no env vars, no secrets.
+- IS a git repo (remote `github.com/lDanill01/monitor-editais`) — publish via `git push` → GitHub Pages.
+- No CI, no lint. Newsletter secrets live ONLY in env vars (`GMAIL_USER`, `GMAIL_APP_PASSWORD`, `NEWSLETTER_API_KEY`) or gitignored `scripts/newsletter_secrets.json` — never commit them.
 - OneDrive sync path contains spaces — quote paths in PowerShell.
 - `render_static.py` overwrites `index.html` — the dynamic shell version is the default.
+- `js/newsletter.js` POSTs to the Apps Script Web App via a hidden iframe (`postMessage` reply); without `webappUrl` configured it falls back to `mailto:`/unavailable message.

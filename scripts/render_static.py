@@ -10,11 +10,45 @@ Uso:
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 from html import escape
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def newsletter_webapp_url():
+    """Lê webappUrl de data/newsletter.js (para o action do form estático)."""
+    cfg_path = ROOT / "data" / "newsletter.js"
+    if cfg_path.exists():
+        m = re.search(r'webappUrl:\s*"([^"]*)"', cfg_path.read_text(encoding="utf-8"))
+        if m:
+            return m.group(1)
+    return ""
+
+
+def newsletter_section():
+    action = escape(newsletter_webapp_url())
+    return f'''    <section class="doc" id="newsletter">
+      <div class="sec-head"><span class="tag">Fique por dentro</span><h2>Receba as novidades por e-mail</h2><p>Assine e receba um resumo com os novos editais, prazos alterados e alertas de encerramento sempre que houver uma atualização do radar — direto na sua caixa de entrada.</p></div>
+      <div class="spec-card nl-card">
+        <form class="nl-form" id="nl-form" method="POST" target="nl-frame" action="{action}" novalidate>
+          <input type="text" name="website" class="nl-hp" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="nl-grid">
+            <label class="nl-field"><span class="glabel">Nome</span><input class="nl-input" id="nl-nome" name="nome" type="text" maxlength="80" autocomplete="name" placeholder="Seu nome"></label>
+            <label class="nl-field"><span class="glabel">E-mail</span><input class="nl-input" id="nl-email" name="email" type="email" maxlength="120" autocomplete="email" placeholder="voce@empresa.com.br" inputmode="email"></label>
+          </div>
+          <label class="nl-check"><input type="checkbox" id="nl-consent" name="consentimento" value="sim"> <span>Concordo em receber e-mails de atualização dos editais de inovação do SENAI MS e sei que posso cancelar a qualquer momento.</span></label>
+          <button class="nl-btn" type="submit">Assinar a newsletter</button>
+        </form>
+        <div class="nl-status" id="nl-status" hidden role="status" aria-live="polite"></div>
+        <iframe id="nl-frame" name="nl-frame" style="display:none" tabindex="-1" aria-hidden="true" title="Destino do formulário"></iframe>
+        <div class="nl-perks"><span class="nl-perk">Resumo semanal das novidades</span><span class="nl-perk">Alertas de prazos que encerram em breve</span><span class="nl-perk">Novos editais assim que mapeados</span><span class="nl-perk">Cancele quando quiser, com 1 clique</span></div>
+      </div>
+      <p class="note"><b>Seus dados:</b> usamos nome e e-mail exclusivamente para o envio destas atualizações, com consentimento e confirmação por e-mail (dupla verificação), conforme a LGPD (Lei nº 13.709/2018). O cancelamento está disponível em todas as mensagens.</p>
+    </section>
+'''
 
 
 def status_pill(status):
@@ -92,7 +126,7 @@ def render(data):
 <nav class="docnav" aria-label="Navegação do relatório">
   <div class="wrap">
     <a class="brandmark" href="#"><img src="assets/logo-senai-fiems.png" alt="SENAI MS — Sistema FIEMS"><span class="sys">Monitor · Editais</span></a>
-    <nav id="nav-menu" aria-label="Seções"><a href="#resumo" class="active">Resumo</a><a href="#aderencia">Aderência SENAI</a><a href="#editais">Editais</a><a href="#nao-confirmado">Não confirmado</a></nav>
+    <nav id="nav-menu" aria-label="Seções"><a href="#resumo" class="active">Resumo</a><a href="#newsletter">Newsletter</a><a href="#aderencia">Aderência SENAI</a><a href="#editais">Editais</a><a href="#nao-confirmado">Não confirmado</a></nav>
     <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu"><span></span></button>
   </div>
 </nav>
@@ -124,7 +158,7 @@ def render(data):
       <div class="sec-head"><span class="tag">Visão geral</span><h2>Resumo Executivo</h2><p>Panorama em {escape(m['reference_date_formatted'])} do funil de oportunidades ativas.</p></div>
       <div class="spec-card"><div class="spec-card__body">{resumo_items}</div></div>
     </section>
-  </div>
+{newsletter_section()}  </div>
   <section class="doc doc--full" id="aderencia">
     <div class="sec-head"><span class="tag">Primeira leitura</span><h2>Aderência com os institutos SENAI/MS</h2><p>Avaliados apenas Aberto + Em breve.</p></div>
     <div class="filter-inline" id="filt-aderencia">
@@ -148,8 +182,10 @@ def render(data):
   </section>
 </main>
 <footer class="footer"><p><b>Monitor — Editais de Inovação</b> · SENAI MS · Sistema FIEMS · 2026</p></footer>
+<script src="data/newsletter.js"></script>
 <script src="js/render.js"></script>
 <script src="js/filters.js"></script>
+<script src="js/newsletter.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>'''

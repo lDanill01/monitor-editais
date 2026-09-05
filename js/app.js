@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ========== Scroll spy ========== */
   const navLinks = document.querySelectorAll('.docnav nav a');
-  const sectionIds = ['novidades', 'resumo', 'aderencia', 'editais', 'nao-confirmado'];
+  const sectionIds = ['novidades', 'resumo', 'newsletter', 'aderencia', 'editais', 'nao-confirmado'];
   function spy() {
     const y = window.scrollY + 90;
     let active = sectionIds[0];
@@ -140,6 +140,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // setup filters
     Filters.setupAderencia();
     Filters.setupEditais();
+
+    // newsletter section (formulário de assinatura)
+    if (window.Newsletter) Newsletter.mount();
 
     // scroll spy
     spy();

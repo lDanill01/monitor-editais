@@ -302,3 +302,32 @@ a.link:hover{color:var(--orange-600);text-decoration:underline}
   .cover{padding:24px 0}
   .stats{margin-top:16px}
 }
+
+/* ==========================================================
+   Newsletter — assinatura (nome, e-mail, consentimento)
+   ========================================================== */
+.nl-card{padding:28px;position:relative}
+.nl-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.nl-field{display:flex;flex-direction:column;gap:8px}
+.nl-field .glabel{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--n-500)}
+.nl-input{font-family:var(--font-body);font-size:14px;color:var(--n-800);background:var(--n-0);border:1.5px solid var(--n-300);border-radius:var(--radius-sm);padding:11px 14px;width:100%;min-height:44px;transition:border-color .15s;box-sizing:border-box}
+.nl-input:focus{border-color:var(--blue-500);outline:none;box-shadow:0 0 0 3px var(--blue-100)}
+.nl-check{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--n-700);line-height:1.55;margin:18px 0 20px;cursor:pointer}
+.nl-check input{accent-color:var(--orange-500);width:18px;height:18px;margin-top:2px;flex-shrink:0;cursor:pointer}
+.nl-btn{font-family:var(--font-display);font-weight:800;font-size:14px;letter-spacing:.02em;color:#fff;background:var(--orange-500);border:none;border-radius:var(--radius-md);padding:14px 32px;cursor:pointer;transition:background .15s, transform .1s;box-shadow:var(--shadow-sm)}
+.nl-btn:hover{background:var(--orange-600)}
+.nl-btn:active{transform:translateY(1px)}
+.nl-btn:disabled{opacity:.6;cursor:wait}
+.nl-status{margin-top:16px;padding:12px 16px;border-radius:var(--radius-md);font-size:13.5px;line-height:1.55}
+.nl-status--ok{background:var(--success-bg);color:var(--success);border:1px solid #BFE3CB}
+.nl-status--err{background:var(--danger-bg);color:var(--danger);border:1px solid #F0C4C4}
+.nl-status--pending{background:var(--blue-50);color:var(--blue-700);border:1px solid var(--blue-100)}
+.nl-perks{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;padding-top:18px;border-top:1px dashed var(--n-200)}
+.nl-perk{font-size:12px;font-weight:600;color:var(--n-700);background:var(--n-50);border:1px solid var(--n-200);padding:6px 12px;border-radius:var(--radius-pill)}
+.nl-hp{position:absolute;left:-9999px;top:-9999px;height:1px;width:1px;overflow:hidden}
+
+@media(max-width:760px){
+  .nl-card{padding:20px}
+  .nl-grid{grid-template-columns:1fr}
+  .nl-btn{width:100%}
+}

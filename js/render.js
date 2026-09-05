@@ -437,7 +437,7 @@ const Render = (() => {
     const nav = document.querySelector('.docnav nav');
     if (nav) {
       nav.innerHTML = '';
-      [['#novidades', 'Novidades'], ['#resumo', 'Resumo'], ['#aderencia', 'Aderência SENAI'], ['#editais', 'Editais'], ['#nao-confirmado', 'Não confirmado']].forEach(([href, label], i) => {
+      [['#novidades', 'Novidades'], ['#resumo', 'Resumo'], ['#newsletter', 'Newsletter'], ['#aderencia', 'Aderência SENAI'], ['#editais', 'Editais'], ['#nao-confirmado', 'Não confirmado']].forEach(([href, label], i) => {
         const a = el('a', { href, text: label });
         if (i === 0) a.classList.add('active');
         nav.appendChild(a);

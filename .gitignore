@@ -31,3 +31,9 @@ package-lock.json
 *.tmp
 *.bak
 *.log
+
+# Newsletter — saídas locais (pré-visualizações e log de envio)
+newsletter/
+
+# Newsletter — segredos locais (preferir variáveis de ambiente)
+scripts/newsletter_secrets.json
