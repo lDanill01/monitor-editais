@@ -38,6 +38,10 @@ button{font-family:inherit;cursor:pointer}
 .docnav nav{display:flex;gap:22px;flex-shrink:0}
 .docnav nav a{font-size:13px;font-weight:700;color:var(--n-600);white-space:nowrap;padding:8px 2px;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
 .docnav nav a:hover,.docnav nav a.active{color:var(--blue-700);border-color:var(--orange-500)}
+.newsletter-cta{margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:var(--radius-md);background:var(--orange-500);color:#fff;font-size:12px;font-weight:800;letter-spacing:.02em;white-space:nowrap;box-shadow:0 5px 14px rgba(232,73,16,.28);transition:transform .15s,background .15s,box-shadow .15s;animation:newsletterPulse 2.8s ease-in-out infinite}
+.newsletter-cta:hover{background:var(--orange-600);transform:translateY(-1px);box-shadow:0 8px 18px rgba(232,73,16,.35)}
+.newsletter-cta span{font-size:14px;line-height:1}
+@keyframes newsletterPulse{50%{box-shadow:0 5px 14px rgba(232,73,16,.28),0 0 0 6px rgba(232,73,16,.10)}}
 .nav-toggle{display:none;flex-shrink:0;width:42px;height:42px;border:1px solid var(--n-200);border-radius:var(--radius-md);align-items:center;justify-content:center;background:#fff;margin-left:auto}
 .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:'';display:block;width:18px;height:2px;background:var(--blue-700);border-radius:2px;transition:.2s}
 .nav-toggle span::before{transform:translateY(-6px)} .nav-toggle span::after{transform:translateY(4px)}
@@ -253,10 +257,11 @@ a.link:hover{color:var(--orange-600);text-decoration:underline}
 
 @media(max-width:760px){
   .wrap{padding:0 18px}
-  .docnav .wrap{height:56px;gap:14px;padding:0 18px}
+  .docnav .wrap{height:56px;gap:10px;padding:0 18px}
   .brandmark{padding-right:12px}
   .brandmark img{height:28px}
   .brandmark .sys{font-size:10px}
+  .newsletter-cta{margin-left:auto;padding:9px 11px;font-size:11px;gap:6px}
   .docnav nav{position:fixed;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid var(--n-200);box-shadow:var(--shadow-md);flex-direction:column;gap:0;padding:8px 18px 12px;transform:translateY(-110%);opacity:0;pointer-events:none;transition:transform .22s ease, opacity .2s}
   .docnav nav.open{transform:translateY(0);opacity:1;pointer-events:auto}
   .docnav nav a{padding:12px 4px;border-bottom:1px solid var(--n-100)}
@@ -330,4 +335,8 @@ a.link:hover{color:var(--orange-600);text-decoration:underline}
   .nl-card{padding:20px}
   .nl-grid{grid-template-columns:1fr}
   .nl-btn{width:100%}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .newsletter-cta{animation:none;transition:none}
 }

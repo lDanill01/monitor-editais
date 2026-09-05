@@ -11,6 +11,8 @@ Painel web estático que monitora editais, chamadas públicas e programas de fom
 - **Dados embutidos** — funciona com `file://` (duplo-clique) sem servidor
 - **Newsletter gratuita** — assinatura no site (nome, e-mail, consentimento LGPD) com double opt-in e digest semanal por e-mail — arquitetura 100% gratuita (Google Apps Script + Gmail SMTP), ver `PRD.md`
 
+Para colocar a newsletter em produção, siga o [Guia de ativação](GUIA_ATIVACAO_NEWSLETTER.md).
+
 ## Estrutura
 
 ```

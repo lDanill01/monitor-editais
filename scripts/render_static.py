@@ -127,6 +127,7 @@ def render(data):
   <div class="wrap">
     <a class="brandmark" href="#"><img src="assets/logo-senai-fiems.png" alt="SENAI MS — Sistema FIEMS"><span class="sys">Monitor · Editais</span></a>
     <nav id="nav-menu" aria-label="Seções"><a href="#resumo" class="active">Resumo</a><a href="#newsletter">Newsletter</a><a href="#aderencia">Aderência SENAI</a><a href="#editais">Editais</a><a href="#nao-confirmado">Não confirmado</a></nav>
+    <a class="newsletter-cta" href="#newsletter" aria-label="Assinar a newsletter do Radar de Editais"><span aria-hidden="true">✉</span> Newsletter</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu"><span></span></button>
   </div>
 </nav>
